@@ -76,7 +76,6 @@ window.addEventListener("scroll", event => {
 
 
 // contextmenu event
-
 const buttons = document.querySelectorAll(".btn");
 
 buttons.forEach(button => {
@@ -87,6 +86,29 @@ buttons.forEach(button => {
 })
 
 // click event
+const newForm = document.createElement("form");
+newForm.setAttribute("id", "newForm");
+newForm.style.padding = "8px";
+
+const formInput = document.createElement("input");
+formInput.setAttribute("type", "text");
+formInput.setAttribute("id", "email");
+formInput.style.padding = "10px";
+formInput.style.margin = "8px";
+
+const formLabel = document.createElement("label");
+formLabel.setAttribute("id", "email");
+formLabel.textContent = "Enter Your Email to Learn More";
+formLabel.style.fontSize = "2rem";
+
+
+destination.appendChild(newForm);
+destination.appendChild(formLabel);
+destination.appendChild(formInput);
+
+formInput.addEventListener("keydown", event => {
+    formInput.style.backgroundColor = "plum";
+})
 
 
 
