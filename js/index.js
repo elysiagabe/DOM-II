@@ -1,10 +1,17 @@
 // Your code goes here
 
 // dblclick event 
+const intro = document.querySelector(".intro"); 
 const mainImg = document.querySelector(".intro img");
 const headerText = document.querySelector (".intro h2");
 
+intro.addEventListener('dblclick', event => {
+    intro.style.backgroundColor = "#000";
+    intro.style.color = "#fff";
+})
+
 mainImg.addEventListener('dblclick', event => {
+    event.stopPropagation();
     mainImg.src = "img/fun-bus-alt.jpg";
     headerText.textContent = "Where will you go?";
 })
@@ -31,17 +38,14 @@ links.forEach(link => {
 const destination = document.querySelector(".content-destination");
 destination.style.padding = "16px";
 
+const destinationImg = document.querySelector(".content-destination img");
+
 destination.addEventListener('mouseenter', event => {
     destination.style.backgroundColor = "#17A2B8";
     destination.style.color = "white";
 })
 
 // mouseleave event 
-// destination.addEventListener('mouseleave', event => {
-//     destination.style.backgroundColor = "initial";
-//     destination.style.color = "initial";
-// })
-
 const firstImg = document.querySelector(".img-content:first-child");
 
 const secondImg = document.querySelector(".img-content:last-child");
@@ -56,7 +60,6 @@ secondImg.addEventListener('mouseleave', event => {
 
 //scroll event
 const allH2 = document.querySelectorAll("h2")
-    //this returns allH2 which is a node list...will need to use .forEach
 
 window.addEventListener("scroll", event => {
     allH2.forEach(h2 => {
