@@ -22,8 +22,8 @@ links.forEach(link => {
 // mouseout event 
 links.forEach(link => {
     link.addEventListener('mouseout', event => {
-        link.style.color = "#212529";
-        link.style.textDecoration = "none";
+        link.style.color = "initial";
+        link.style.textDecoration = "initial";
     })
 })
 
@@ -38,8 +38,20 @@ destination.addEventListener('mouseenter', event => {
 
 // mouseleave event 
 destination.addEventListener('mouseleave', event => {
-    destination.style.backgroundColor = "white";
-    destination.style.color = "#212529";
+    destination.style.backgroundColor = "initial";
+    destination.style.color = "initial";
 })
 
 
+// dragend event 
+const firstImg = document.querySelector(".img-content:first-child");
+
+const secondImg = document.querySelector(".img-content:last-child");
+
+firstImg.addEventListener('dragend', event => {
+    firstImg.style.transform = "rotate(-10deg)";
+})
+
+secondImg.addEventListener('dragend', event => {
+    secondImg.style.transform = "rotate(10deg)";
+})
