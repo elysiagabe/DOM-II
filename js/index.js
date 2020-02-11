@@ -42,7 +42,6 @@ window.addEventListener("resize", event => {
 
 // mouseleave event 
 const firstImg = document.querySelector(".img-content:first-child");
-
 const secondImg = document.querySelector(".img-content:last-child");
 
 firstImg.addEventListener('mouseleave', event => {
@@ -115,7 +114,17 @@ buttons.forEach(button => {
     })
 })
 
+// greensock stretch
 
+document.querySelectorAll("img").forEach(image => {
+    image.addEventListener("click", () => {
+        gsap.to(image, {
+            duration: 2,
+            scale: 1.01,
+            ease: "back.out(400)"
+        })
+    })
+})
 
 
 
