@@ -37,21 +37,36 @@ destination.addEventListener('mouseenter', event => {
 })
 
 // mouseleave event 
-destination.addEventListener('mouseleave', event => {
-    destination.style.backgroundColor = "initial";
-    destination.style.color = "initial";
-})
+// destination.addEventListener('mouseleave', event => {
+//     destination.style.backgroundColor = "initial";
+//     destination.style.color = "initial";
+// })
 
-
-// dragend event 
 const firstImg = document.querySelector(".img-content:first-child");
 
 const secondImg = document.querySelector(".img-content:last-child");
 
-firstImg.addEventListener('dragend', event => {
+firstImg.addEventListener('mouseleave', event => {
     firstImg.style.transform = "rotate(-10deg)";
 })
 
-secondImg.addEventListener('dragend', event => {
+secondImg.addEventListener('mouseleave', event => {
     secondImg.style.transform = "rotate(10deg)";
 })
+
+//scroll event
+const allH2 = document.querySelectorAll("h2")
+    //this returns allH2 which is a node list...will need to use .forEach
+
+window.addEventListener("scroll", event => {
+    allH2.forEach(h2 => {
+        h2.style.fontSize = "5rem";
+        h2.style.color = "hotpink";
+    })
+})
+
+
+
+
+
+
