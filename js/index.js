@@ -1,6 +1,24 @@
 // Your code goes here
 
-// dblclick event 
+// mouseover event
+const links = document.querySelectorAll(".nav-link");
+
+links.forEach(link => {
+    link.addEventListener('mouseover', event => {
+        link.style.color = "#17A2B8";
+        link.style.textDecoration = "underline";
+    })
+})
+
+// mouseout event 
+links.forEach(link => {
+    link.addEventListener('mouseout', event => {
+        link.style.color = "initial";
+        link.style.textDecoration = "initial";
+    })
+})
+
+// dblclick event with stop propagation
 const intro = document.querySelector(".intro"); 
 const mainImg = document.querySelector(".intro img");
 const headerText = document.querySelector (".intro h2");
@@ -20,35 +38,6 @@ mainImg.addEventListener('dblclick', event => {
 window.addEventListener("resize", event => {
     mainImg.style.transform = "rotate(180deg)";
     mainImg.style.transition = "transform .7s";
-})
-
-// mouseover event
-const links = document.querySelectorAll(".nav-link");
-
-links.forEach(link => {
-    link.addEventListener('mouseover', event => {
-        link.style.color = "#17A2B8";
-        link.style.textDecoration = "underline";
-    })
-})
-
-// mouseout event 
-links.forEach(link => {
-    link.addEventListener('mouseout', event => {
-        link.style.color = "initial";
-        link.style.textDecoration = "initial";
-    })
-})
-
-// mouseenter event
-const destination = document.querySelector(".content-destination");
-destination.style.padding = "16px";
-
-const destinationImg = document.querySelector(".content-destination img");
-
-destination.addEventListener('mouseenter', event => {
-    destination.style.backgroundColor = "#17A2B8";
-    destination.style.color = "white";
 })
 
 // mouseleave event 
@@ -74,15 +63,15 @@ window.addEventListener("scroll", event => {
     })
 })
 
+// mouseenter event
+const destination = document.querySelector(".content-destination");
+destination.style.padding = "16px";
 
-// contextmenu event
-const buttons = document.querySelectorAll(".btn");
+const destinationImg = document.querySelector(".content-destination img");
 
-buttons.forEach(button => {
-    button.addEventListener("contextmenu", event => {
-        event.preventDefault();
-        alert("HEY THERE");
-    })
+destination.addEventListener('mouseenter', event => {
+    destination.style.backgroundColor = "#17A2B8";
+    destination.style.color = "white";
 })
 
 // keydown event
@@ -107,6 +96,16 @@ destination.appendChild(formInput);
 
 formInput.addEventListener("keydown", event => {
     formInput.style.backgroundColor = "plum";
+})
+
+// contextmenu event with prevent default method
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+    button.addEventListener("contextmenu", event => {
+        event.preventDefault();
+        alert("HEY THERE");
+    })
 })
 
 // click event
