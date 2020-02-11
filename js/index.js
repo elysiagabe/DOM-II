@@ -69,6 +69,17 @@ window.addEventListener("scroll", event => {
 })
 
 
+// context menu
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+    button.addEventListener("contextmenu", event => {
+        event.preventDefault();
+        alert("HEY THERE");
+    })
+})
+
 
 
 
