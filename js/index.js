@@ -85,7 +85,7 @@ buttons.forEach(button => {
     })
 })
 
-// click event
+// keydown event
 const newForm = document.createElement("form");
 newForm.setAttribute("id", "newForm");
 newForm.style.padding = "8px";
@@ -101,13 +101,19 @@ formLabel.setAttribute("id", "email");
 formLabel.textContent = "Enter Your Email to Learn More";
 formLabel.style.fontSize = "2rem";
 
-
 destination.appendChild(newForm);
 destination.appendChild(formLabel);
 destination.appendChild(formInput);
 
 formInput.addEventListener("keydown", event => {
     formInput.style.backgroundColor = "plum";
+})
+
+// click event
+buttons.forEach(button => {
+    button.addEventListener("click", event => {
+        button.style.transform = "scale(1.3)";
+    })
 })
 
 
