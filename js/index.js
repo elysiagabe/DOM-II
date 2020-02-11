@@ -16,6 +16,12 @@ mainImg.addEventListener('dblclick', event => {
     headerText.textContent = "Where will you go?";
 })
 
+// resize event
+window.addEventListener("resize", event => {
+    mainImg.style.transform = "rotate(180deg)";
+    mainImg.style.transition = "transform .7s";
+})
+
 // mouseover event
 const links = document.querySelectorAll(".nav-link");
 
@@ -69,7 +75,7 @@ window.addEventListener("scroll", event => {
 })
 
 
-// context menu
+// contextmenu event
 
 const buttons = document.querySelectorAll(".btn");
 
@@ -79,6 +85,9 @@ buttons.forEach(button => {
         alert("HEY THERE");
     })
 })
+
+// click event
+
 
 
 
